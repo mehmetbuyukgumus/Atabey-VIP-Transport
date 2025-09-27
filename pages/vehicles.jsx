@@ -29,9 +29,9 @@ const CAR = {
 // Galeri koleksiyonları ve tema ayarları
 const GALLERIES = {
   mercedes: CAR.images,
+  mercedes_s: CAR.images_mercedes_s,
   bmw: CAR.images_bmw,
   range: CAR.images_range,
-  mercedes: CAR.images_mercedes_s,
 };
 
 const THEMES = {
@@ -41,8 +41,7 @@ const THEMES = {
 };
 
 function Vehicles() {
-    const [open, setOpen] = useState(null);
-    const M = useTranslation();    
+    const [open, setOpen] = useState(null);    
   // (Opsiyonel) ESC/ok tuşları ile kontrol
   const onKeyDown = useCallback(
     (e) => {
@@ -111,21 +110,21 @@ function Vehicles() {
             ))}
           </section>
 
-          {/* Mercedes */}
+          {/* Mercedes - s */}
           <header className="header" style={{ marginTop: "4%" }}>
             <div className="title">
               <span className="brand">Mercedes</span>
               <h1 className="model">Mercedes</h1>
             </div>
-            <p className="desc">Mercedes Classe A</p>
+            <p className="desc">Mercedes Classe S</p>
           </header>
 
           <section className="grid">
             {CAR.images_mercedes_s.map((img, i) => (
               <button
-                key={`bmw-${i}`}
+                key={`mercedes_s-${i}`}
                 className="thumb"
-                onClick={() => handleOpen("bmw", i)}
+                onClick={() => handleOpen("mercedes_s", i)}
                 aria-label={`${img.alt ?? "görsel"} büyüt`}
               >
                 <div className="thumbInner">
